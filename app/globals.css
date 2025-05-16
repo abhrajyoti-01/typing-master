@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 98%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  /* Dark Theme - Sleek, modern dark theme with vibrant blue accents */
+  .dark {
+    --background: 230 25% 5%;
+    --foreground: 210 40% 98%;
+    --card: 230 25% 7%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 25% 5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 90% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 230 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 230 25% 12%;
+    --muted-foreground: 217 10% 70%;
+    --accent: 217 90% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 230 25% 15%;
+    --input: 230 25% 15%;
+    --ring: 217 90% 60%;
+  }
+
+  /* Neon Theme - Cyberpunk-inspired with vibrant electric colors */
+  .neon {
+    --background: 260 50% 5%;
+    --foreground: 180 100% 80%;
+    --card: 260 50% 8%;
+    --card-foreground: 180 100% 80%;
+    --popover: 260 50% 5%;
+    --popover-foreground: 180 100% 80%;
+    --primary: 320 100% 65%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 180 100% 55%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 260 40% 12%;
+    --muted-foreground: 180 70% 70%;
+    --accent: 320 100% 65%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 0%;
+    --border: 260 40% 15%;
+    --input: 260 40% 15%;
+    --ring: 320 100% 65%;
+  }
+
+  /* Forest Theme - Rich natural greens with earthy accents */
+  .forest {
+    --background: 140 30% 5%;
+    --foreground: 120 30% 95%;
+    --card: 140 30% 8%;
+    --card-foreground: 120 30% 95%;
+    --popover: 140 30% 5%;
+    --popover-foreground: 120 30% 95%;
+    --primary: 130 70% 45%;
+    --primary-foreground: 120 30% 95%;
+    --secondary: 80 60% 35%;
+    --secondary-foreground: 120 30% 95%;
+    --muted: 140 20% 12%;
+    --muted-foreground: 120 15% 70%;
+    --accent: 130 70% 45%;
+    --accent-foreground: 120 30% 95%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 120 30% 95%;
+    --border: 140 20% 15%;
+    --input: 140 20% 15%;
+    --ring: 130 70% 45%;
+  }
+
+  /* Ocean Theme - Deep blues with aquatic highlights */
+  .ocean {
+    --background: 215 60% 5%;
+    --foreground: 200 60% 95%;
+    --card: 215 60% 8%;
+    --card-foreground: 200 60% 95%;
+    --popover: 215 60% 5%;
+    --popover-foreground: 200 60% 95%;
+    --primary: 195 100% 55%;
+    --primary-foreground: 215 10% 5%;
+    --secondary: 230 80% 60%;
+    --secondary-foreground: 215 10% 5%;
+    --muted: 215 40% 12%;
+    --muted-foreground: 200 40% 70%;
+    --accent: 195 100% 55%;
+    --accent-foreground: 215 10% 5%;
+    --destructive: 350 80% 55%;
+    --destructive-foreground: 200 60% 95%;
+    --border: 215 40% 15%;
+    --input: 215 40% 15%;
+    --ring: 195 100% 55%;
+  }
+
+  /* Sunset Theme - Warm gradients with rich reds and oranges */
+  .sunset {
+    --background: 340 60% 5%;
+    --foreground: 30 100% 95%;
+    --card: 340 60% 8%;
+    --card-foreground: 30 100% 95%;
+    --popover: 340 60% 5%;
+    --popover-foreground: 30 100% 95%;
+    --primary: 25 100% 55%;
+    --primary-foreground: 340 10% 5%;
+    --secondary: 340 80% 40%;
+    --secondary-foreground: 30 100% 95%;
+    --muted: 340 30% 12%;
+    --muted-foreground: 30 70% 70%;
+    --accent: 25 100% 55%;
+    --accent-foreground: 340 10% 5%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 30 100% 95%;
+    --border: 340 30% 15%;
+    --input: 340 30% 15%;
+    --ring: 25 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+/* Add glow effects for the neon theme */
+.neon .text-primary {
+  text-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+}
+
+.neon .border-primary {
+  box-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+}
+
+/* Add subtle texture for forest theme */
+.forest .bg-card {
+  background-image: linear-gradient(to bottom, hsl(var(--card) / 1), hsl(var(--card) / 1)),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='hsl(140, 30%%, 10%%)' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Add water-like effect for ocean theme */
+.ocean .bg-card {
+  background-image: linear-gradient(to bottom, hsl(var(--card) / 1), hsl(var(--card) / 1)),
+    url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264.888-.14 1.005-.174 1.837-.425 2.403-.484 1.83-.194 2.422.06 3.655-.233 1.233-.293 2.058-.56 3.56-.495 1.5.066 2.323.407 3.456.39.72-.013 1.385-.168 2.144-.391.153-.045.34-.088.433-.142.092-.054.147-.125.17-.217.024-.093 0-.19-.058-.276-.146-.21-.385-.345-.64-.464-.254-.118-.534-.22-.758-.333-.224-.112-.393-.23-.463-.37-.07-.138-.035-.29.105-.43.442-.446 1.253-.784 1.897-1.055.645-.27 1.197-.51 1.73-.695.532-.185 1.033-.306 1.487-.376.453-.07.863-.078 1.202-.013.34.065.646.198.918.406.27.21.505.47.67.76.167.294.28.62.337.97.06.35.05.722-.013 1.09-.062.37-.182.736-.35 1.096-.168.36-.38.705-.635 1.03-.255.323-.55.62-.88.887-.33.267-.695.503-1.09.703-.395.2-.82.364-1.272.49-.452.127-.928.214-1.422.26-.494.044-1.004.044-1.52 0-.517-.045-1.046-.137-1.586-.277-.54-.14-1.09-.327-1.65-.562-.558-.234-1.13-.52-1.713-.858-.582-.338-1.177-.73-1.78-1.173-.602-.443-1.214-.94-1.83-1.49-.618-.548-1.24-1.15-1.87-1.8-.63-.65-1.26-1.35-1.9-2.1-.64-.75-1.29-1.55-1.94-2.4-.65-.85-1.31-1.75-1.97-2.7L7.94 10.09c-.64-.92-1.29-1.88-1.94-2.9-.65-1.02-1.31-2.1-1.97-3.24-.33-.57-.67-1.15-1-1.75-.33-.6-.67-1.21-1-1.83L.83 0 0 1.2c.025.04 2.7 4.13 7.5 8.1l4.1 3.45-2.7 3.4c-.71.85-1.42 1.64-2.13 2.36-.71.72-1.42 1.37-2.13 1.94-.71.57-1.42 1.06-2.13 1.47-.71.41-1.42.74-2.13.98-.71.24-1.42.4-2.13.48-.71.08-1.42.08-2.13 0-.71-.08-1.42-.24-2.13-.48-.71-.24-1.42-.57-2.13-.98-.71-.41-1.42-.9-2.13-1.47-.71-.57-1.42-1.22-2.13-1.94-.71-.72-1.42-1.51-2.13-2.36L-21.184 0 0 20h21.184z' fill='hsl(215, 60%%, 10%%)' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Add gradient effect for sunset theme */
+.sunset .bg-card {
+  background-image: linear-gradient(135deg, hsl(var(--card) / 1) 0%, hsl(var(--card) / 1) 85%, hsl(340, 60%, 10%) 100%);
+}
+
+/* Add subtle animation for neon theme */
+@keyframes neon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.neon .text-primary {
+  animation: neon-pulse 4s infinite;
+}
