@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preload critical assets */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,6 +42,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
           themes={["dark", "neon", "forest", "ocean", "sunset"]}
+          disableTransitionOnChange
         >
           {children}
         </ThemeProvider>

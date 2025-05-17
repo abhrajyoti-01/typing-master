@@ -1,5 +1,5 @@
 {
-  "name": "my-v0-project",
+  "name": "typing-master-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -63,6 +63,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",

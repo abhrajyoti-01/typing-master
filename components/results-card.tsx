@@ -4,7 +4,6 @@ import { useEffect, memo } from "react"
 import { motion } from "framer-motion"
 import { Clock, Target, Zap } from "lucide-react"
 import confetti from "canvas-confetti"
-import { useSoundEffects } from "@/hooks/use-sound-effects"
 
 interface ResultsCardProps {
   wpm: number
@@ -13,8 +12,6 @@ interface ResultsCardProps {
 }
 
 const ResultsCard = memo(function ResultsCard({ wpm, accuracy, time }: ResultsCardProps) {
-  const { playPerfect } = useSoundEffects()
-
   // Trigger confetti on component mount
   const triggerConfetti = () => {
     confetti({
@@ -28,11 +25,11 @@ const ResultsCard = memo(function ResultsCard({ wpm, accuracy, time }: ResultsCa
   useEffect(() => {
     triggerConfetti()
 
-    // Play perfect sound if accuracy is 100%
+    // Perfect accuracy handling (sound effect removed)
     if (accuracy === 100) {
-      playPerfect()
+      // Perfect accuracy!
     }
-  }, [accuracy, playPerfect])
+  }, [accuracy])
 
   // Determine performance level
   const getPerformanceLevel = () => {

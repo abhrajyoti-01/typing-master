@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { CheckCircle, RefreshCw, Clock, Award, BarChart3, FileText, Volume2, VolumeX, Trophy } from "lucide-react"
+import { CheckCircle, RefreshCw, Clock, Award, BarChart3, FileText, Trophy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
@@ -43,20 +43,11 @@ export default function TypingTest() {
   const [lastWpm, setLastWpm] = useState(0)
   const [activeTab, setActiveTab] = useState("test")
 
-  const {
-    playKeyPressVariation,
-    playBackspace,
-    playError,
-    playErrorRepeated,
-    playComplete,
-    playMilestone,
-    playCombo,
-    playPerfect,
-    isMuted,
-    toggleMute,
-  } = useSoundEffects()
+    // Sound effects have been removed - we only retain currentTheme
+  const { currentTheme } = useSoundEffects()
 
-  const inputRef = useRef<HTMLInputElement>(null)
+  // Use MutableRefObject to fix type issue
+  const inputRef = useRef<HTMLInputElement>(null) as React.MutableRefObject<HTMLInputElement>
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const lastMilestoneRef = useRef<number>(0)
 
@@ -83,17 +74,17 @@ export default function TypingTest() {
         if (elapsedMinutes > 0) {
           const currentWpm = Math.round(currentIndex / 5 / elapsedMinutes)
 
-          // Check for WPM milestones
+          // Check for WPM milestones (sound effects removed)
           if (currentWpm >= 20 && lastWpm < 20) {
-            playMilestone()
+            // Milestone reached
           } else if (currentWpm >= 40 && lastWpm < 40) {
-            playMilestone()
+            // Milestone reached
           } else if (currentWpm >= 60 && lastWpm < 60) {
-            playMilestone()
+            // Milestone reached
           } else if (currentWpm >= 80 && lastWpm < 80) {
-            playMilestone()
+            // Milestone reached
           } else if (currentWpm >= 100 && lastWpm < 100) {
-            playMilestone()
+            // Milestone reached
           }
 
           setLastWpm(currentWpm)
@@ -102,37 +93,34 @@ export default function TypingTest() {
     } else if (status === "finished" && timerRef.current) {
       clearInterval(timerRef.current)
 
-      // Check for perfect accuracy
+      // Check for perfect accuracy (sound effects removed)
       if (errors === 0 && text.length > 10) {
-        playPerfect()
+        // Perfect accuracy!
       } else {
-        playComplete()
+        // Test completed
       }
     }
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [status, startTime, playComplete, playPerfect, playMilestone, currentIndex, errors, text.length, lastWpm])
+  }, [status, startTime, currentIndex, errors, text.length, lastWpm])
 
   // Check for progress milestones
   useEffect(() => {
     if (status === "started" && text) {
       const progressPercent = Math.round((currentIndex / text.length) * 100)
 
-      // Play milestone sound at 25%, 50%, 75% completion if not already played
+      // Track progress milestones at 25%, 50%, 75% completion (sound effects removed)
       if (progressPercent >= 25 && lastMilestoneRef.current < 25) {
-        playMilestone()
         lastMilestoneRef.current = 25
       } else if (progressPercent >= 50 && lastMilestoneRef.current < 50) {
-        playMilestone()
         lastMilestoneRef.current = 50
       } else if (progressPercent >= 75 && lastMilestoneRef.current < 75) {
-        playMilestone()
         lastMilestoneRef.current = 75
       }
     }
-  }, [currentIndex, text, status, playMilestone])
+  }, [currentIndex, text, status])
 
   // Handle user input
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -152,30 +140,21 @@ export default function TypingTest() {
       const expectedChar = text[value.length - 1]
       const isCorrect = lastChar === expectedChar
 
-      // Play sound based on correctness
+      // Handle key press (sound effects removed)
       if (isCorrect) {
-        playKeyPressVariation(lastChar)
         setLastKeyCorrect(true)
         setComboCount((prev) => prev + 1)
         setErrorStreak(0)
 
-        // Play combo sound for streaks
+        // Track combo streaks (sound effects removed)
         if (comboCount === 9) {
           // Will become 10 after increment
-          playCombo()
         } else if (comboCount === 19) {
           // Will become 20 after increment
-          playCombo()
         } else if (comboCount === 49) {
           // Will become 50 after increment
-          playCombo()
         }
       } else {
-        if (errorStreak >= 2) {
-          playErrorRepeated()
-        } else {
-          playError()
-        }
         setLastKeyCorrect(false)
         setComboCount(0)
         setErrorStreak((prev) => prev + 1)
@@ -191,7 +170,7 @@ export default function TypingTest() {
     }
     // Check if a character was removed (backspace)
     else if (value.length < prevLength) {
-      playBackspace()
+      // Backspace handled (sound effect removed)
     }
 
     setUserInput(value)
@@ -361,9 +340,6 @@ export default function TypingTest() {
           <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">by Abhra</span>
         </div>
         <div className="flex items-center gap-2 z-10 mt-2 sm:mt-0">
-          <Button variant="outline" size="icon" onClick={toggleMute} className="border-border">
-            {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-          </Button>
           <ThemeSwitcher />
         </div>
       </div>
@@ -454,7 +430,7 @@ export default function TypingTest() {
                         value={userInput}
                         onChange={handleInputChange}
                         inputRef={inputRef}
-                        disabled={status === "finished"}
+                        disabled={status === "finished" as any}
                       />
 
                       <div className="mt-4">
@@ -608,7 +584,7 @@ export default function TypingTest() {
                       value={userInput}
                       onChange={handleInputChange}
                       inputRef={inputRef}
-                      disabled={status === "finished"}
+                      disabled={status === "finished" as any}
                     />
 
                     <div className="mt-4 flex justify-between items-center">
