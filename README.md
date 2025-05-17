@@ -9,7 +9,6 @@ A platform where you can test and improve your typing speed with real-time feedb
 - **Performance History**: View your progress over time with detailed statistics
 - **Keyboard Heatmap**: Visualize your typing errors to identify problem keys
 - **Multiple Themes**: Choose from dark, neon, forest, ocean, and sunset themes
-- **Sound Effects**: Audio feedback for typing, errors, and achievements
 - **Custom Text Option**: Practice with your own text passages
 - **Challenge Modes**: Specific challenges for speed, accuracy, and endurance
 - **Responsive Design**: Works on both desktop and mobile devices
