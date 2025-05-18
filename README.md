@@ -26,7 +26,7 @@ A platform where you can test and improve your typing speed with real-time feedb
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/typing-master.git
+   git clone https://github.com/abhrajyoti-01/typing-master.git
    ```
 
 2. Navigate to the project directory:
