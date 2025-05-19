@@ -6,7 +6,7 @@ import { Github } from "lucide-react"
 
 export default function GitHubButton() {
   const handleClick = () => {
-    window.open("https://github.com/abhrajyoti-01/Typing_Master", "_blank")
+    window.open("https://github.com/abhrajyoti-01/typing-master", "_blank")
   }
 
   return (
