@@ -20,7 +20,6 @@ A platform where you can test and improve your typing speed with real-time feedb
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **UI Components**: Radix UI with shadcn/ui
-- **Audio Effects**: Custom hooks for sound management
 
 ## Installation
 
